@@ -27,22 +27,10 @@ module Sht
 
     def parse_options
       OptionParser.new do |opts|
-        opts.banner = "Usage: [options] [command] "
-
-        opts.on("-j", "--json", "See JSON output") do |v|
-          @options[:json] = true
-        end
-
-        opts.on("-j", "--json", "See JSON output") do |v|
-          @options[:json] = true
-        end
+        opts.banner = "Usage: sht [subcommand] [options] "
 
         opts.on("-c file", "--config file", String, "Use an alternative config file") do |file|
           @options[:config] = file
-        end
-
-        opts.on("--list x,y,z", Array, "Just a list of arguments") do |list|
-          @options[:list] = list
         end
 
         opts.on("-p --project", Array, "Show hosts from a given project") do |list|
